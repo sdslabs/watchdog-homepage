@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SDSLabs Watchdog</title>
+	<!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
+	<link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="landing">
+		<div class="header"><span>Watchdog</span></div>
+		<div class="tagline">
+			A lightweight, stateless server management tool
+		</div>
+		<div class="bar"></div>
+		<div class="desc">
+			Watchdog lets you control which user gets access to which Server / VM, and track privilege escalation. This seamless access management is done through a Github repository called “Keyhouse”.
+		</div>
+		<div class="setupnow"><span>Setup Now</span></div>
+		<div class="guide-head">Guide to Set-Up Watchdog</div>
+		<div class="bar2"></div>
+		
+		<div class="bullet bullet-1">1</div>
+		<div class="point point-1">Install notification app on slack</div>
+		<div class="slack-button" onclick="openSlackAuth()"></div>
+		<div class="tick tick-1" id="tick-1"></div>
+		
+		<div class="bullet bullet-2">2</div>
+		<div class="point point-2">Create a “Keyhouse” repository on Github</div>
+		<div class="github-button" onclick="createKeyhouse()"></div>
+		<div class="tick tick-2" id="tick-2"></div>
+		
+		<div class="bullet bullet-3">3</div>
+		<div class="point point-3">Generate an access token for Keyhouse repository</div>
+		<div class="ghapp-button" onclick="openGithubAuth()"></div>
+		<div class="tick tick-3" id="tick-3"></div>
+		
+		<div class="bullet bullet-4">4</div>
+		<div class="point point-4">Install script on server</div>
+		<div class="text-2">Download and run the script.</div>
+		<div class="install-button" onclick="generateInstallScript()"></div>
+		<div class="text-3">and run</div>
+		<div class="bash-background"></div>
+		<div class="text-4">$ sudo ./install.sh &lt;hostname&gt; &lt;github-access-token&gt; &lt;organization/keyhouse&gt;</div>
+		<div class="text-5">Powered by</div>
+		<a href="https://sdslabs.co"><div class="sdslabs-logo"></div></a>
+	</div>
+</body>
+<script type="text/javascript">
+	slack_hook = "";
+
+	function openSlackAuth() {
+		window.open('https://slack.com/oauth/authorize?scope=incoming-webhook,chat:write:bot&client_id=805471384768.805051328564','popuppage',
+      'width=800,toolbar=1,resizable=1,scrollbars=yes,height=800,top=100,left=100');
+	}
+
+	function updateSlackToken(value) {
+		slack_hook = value
+		document.getElementById('tick-1').style.display = "block";
+	}
+
+	function createKeyhouse() {
+		window.open('https://github.com/sdslabs/keyhouse-template/generate','popuppage',
+      'width=800,toolbar=1,resizable=1,scrollbars=yes,height=800,top=100,left=100');
+		document.getElementById('tick-2').style.display = "block";
+	}
+
+	function openGithubAuth() {
+		window.open('https://github.com/settings/tokens/new?description=Keyhouse%20Token&scopes=repo','popuppage',
+      'width=800,toolbar=1,resizable=1,scrollbars=yes,height=800,top=100,left=100');
+		document.getElementById('tick-3').style.display = "block";
+	}
+
+
+	function generateInstallScript() {
+
+	}
+</script>
+</html>
+
