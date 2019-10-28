@@ -22,7 +22,7 @@ function code2token(code, cb) {
 		url: 'https://slack.com/api/oauth.access',
 		form: form
 	}, function(err, res, body) {
-		console.log(body)
+		// console.log(body)
 		cb(JSON.parse(body).incoming_webhook.url);
 	})
 }
