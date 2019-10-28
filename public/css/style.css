@@ -1,0 +1,395 @@
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('/fonts/Segoe UI.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@font-face {
+  font-family: 'Consolas';
+  src: url('/fonts/Consolas.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+	font-size: 1.5625vw;
+	width: 100%;
+	font-family: 'Muli', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.landing {
+	background-image: url("/img/back.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*height: 35.4rem;*/
+	height: 87.9rem;
+	width: 100%;
+}
+
+.header {
+	width: 100%;
+	margin-top: 1.75rem;
+	padding: 0 5.5rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	line-height: 1.5rem;
+	color: #181717;
+}
+
+.header span::before,
+.header span::after {
+	content: '';
+	height: .3rem;
+	width: .3rem;
+	display: inline-block;
+	border-radius: 50%;
+	background-color: #181717;
+	vertical-align: middle;
+}
+
+.header span::before {
+	margin-right: .25rem;
+}
+
+.header span::after {
+	margin-left: .25rem;
+}
+
+.tagline {
+	position: absolute;
+	width: 26.6rem;
+	height: 4.95rem;
+	left: 5.5rem;
+	top: 12.85rem;
+
+	/* 40px bold muli */
+
+	font-family: Muli;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 2rem;
+	line-height: 2.5rem;
+
+	color: #181717;
+
+}
+
+.bar {
+	position: absolute;
+	width: 4.2rem;
+	height: 0.2rem;
+	left: 5.5rem;
+	top: 18.8rem;
+
+	background: #2B2727;
+	border-radius: 0.25rem;
+}
+
+.desc {
+	position: absolute;
+	width: 31.4rem;
+	height: 5.95rem;
+	left: 5.5rem;
+	top: 20.4rem;
+
+	font-family: "Segoe UI";
+	font-size: 1rem;
+	line-height: 150%;
+	/* or 30px */
+
+
+	color: #444444;
+}
+
+.setupnow {
+	position: absolute;
+	width: 9.55rem;
+	height: 2.4rem;
+	left: 5.4rem;
+	top: 27.75rem;
+
+	background: #4B4E6D;
+	box-shadow: 0.25rem 0.25rem 0.5rem rgba(75, 78, 109, 0.1);
+	border-radius: 0.25rem;
+	color: white;
+	font-family: "Segoe UI";
+	font-size: 0.9rem;
+	text-align: center;
+	padding-top: 0.75rem;
+	cursor: pointer;
+}
+
+.guide-head {
+	position: absolute;
+	width: 26rem;
+	height: 1.7rem;
+	left: 5.5rem;
+	top: 37.8rem;
+
+	font-family: Muli;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.4rem;
+	line-height: 1.75rem;
+
+	color: #181717;
+}
+
+.bar2 {
+	position: absolute;
+	width: 3.2rem;
+	height: 0.15rem;
+	left: 5.5rem;
+	top: 39.9rem;
+
+	background: #2B2727;
+	border-radius: 0.25rem;
+}
+
+.bullet {
+	position: absolute;
+	width: 1.4rem;
+	height: 1.4rem;
+	left: 5.5rem;
+
+	font-family: "Segoe UI";
+	font-size: 0.7rem;
+	/*line-height: 150%;*/
+
+	border-radius: 0.7rem;
+	/* or 21px */
+
+	display: flex;
+	/*align-items: center;*/
+	text-align: center;
+	background-color: #444444;
+	padding-top: 0.35rem;
+	padding-left: 0.50rem;
+
+	color: #FFFFFF;
+}
+
+.bullet-1 {
+	top: 44.75rem;
+}
+
+.bullet-2 {
+	top: 52rem;
+}
+
+.bullet-3 {
+	top: 59.25rem;
+}
+
+.bullet-4 {
+	top: 67rem;
+}
+.bullet-3 {
+	top: 59.25rem;
+}
+.point {
+	position: absolute;
+	height: 1.5rem;
+	left: 7.5rem;
+
+	font-family: Segoe UI;
+	font-size: 1rem;
+	line-height: 150%;
+
+	color: #444444;
+}
+
+.point-1 {
+	width: 18.35rem;
+	top: 44.7rem;
+}
+
+.point-2 {
+	width: 18.85rem;
+	top: 51.95rem;
+}
+
+.point-3 {
+	width: 18.35rem;
+	top: 59.2rem;
+}
+
+.point-4 {
+	width: 18.35rem;
+	top: 66.95rem;
+}
+
+.slack-button {
+	position: absolute;
+	width: 6.95rem;
+	height: 2rem;
+	left: 7.5rem;
+	top: 47rem;
+
+	background: url(https://platform.slack-edge.com/img/add_to_slack@2x.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.tick {
+	position: absolute;
+	left: 27.25rem;
+	width: 1rem;
+	height: 1rem;
+	background: url(/img/tick.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: none;
+}
+
+.tick-1 {
+	top: 45.05rem;
+}
+
+.tick-2 {
+	top: 52.3rem;
+}
+
+.tick-3 {
+	top: 59.55rem;
+}
+
+.github-button {
+	position: absolute;
+	width: 8.3rem;
+	height: 2rem;
+	left: 7.5rem;
+	top: 54.25rem;
+
+	cursor: pointer;
+	background: url(/img/gh-button.svg);
+	background-repeat: no-repeat;
+	background-size: contain;	
+}
+
+.text-2 {
+	position: absolute;
+	/*width: 10rem;*/
+	height: 1.5rem;
+	left: 7.5rem;
+	top: 69.05rem;
+
+	font-family: Segoe UI;
+	font-size: 0.8rem;
+	line-height: 150%;
+
+	color: #444444;
+}
+
+.install-button {
+	position: absolute;
+	width: 5.1rem;
+	height: 1.8rem;
+	left: 7.5rem;
+	top: 71.4rem;
+
+	background: url(/img/install.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.text-3 {
+	position: absolute;
+	width: 2.7rem;
+	height: 1.5rem;
+	left: 13.8rem;
+	top: 71.5rem;
+
+	font-family: Segoe UI;
+	font-size: 0.6rem;
+	line-height: 150%;
+	/* or 18px */
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	color: rgba(68, 68, 68, 0.8);
+}
+
+.text-4 {
+	position: absolute;
+	/*width: 11.4385rem;*/
+	height: 2.25rem;
+	left: 18.7rem;
+	top: 71.2rem;
+
+	font-family: Consolas;
+	font-size: 0.6rem;
+	line-height: 150%;
+	/* or 18px */
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	color: #444444;
+}
+
+.text-5 {
+	position: absolute;
+	width: 3.8rem;
+	height: 0.75rem;
+	left: 30.2rem;
+	top: 80.8rem;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 0.6rem;
+	line-height: 0.75rem;
+	/* identical to box height */
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	color: #313131;
+}
+
+.sdslabs-logo {
+	position: absolute;
+	left: 28.85rem;
+	top: 81.95rem;
+	width: 6.3rem;
+	height: 2.592rem;
+	background: url(/img/sdslabs.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.ghapp-button {
+	position: absolute;
+	width: 8.3rem;
+	height: 2rem;
+	left: 7.5rem;
+	top: 63.0rem;
+
+	cursor: pointer;
+	background: url(/img/gh-button-3.svg);
+	background-repeat: no-repeat;
+	background-size: contain;	
+}
+
+.bash-background {
+	position: absolute;
+	width: 27.2rem;
+	height: 2.3rem;
+	left: 17.7rem;
+	top: 71.15rem;
+
+	background: rgba(238, 238, 240, 0.5);
+	border-radius: 0.25rem;
+}

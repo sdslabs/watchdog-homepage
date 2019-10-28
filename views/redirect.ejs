@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redirecting...</title>
+</head>
+<body>
+Redirecting...
+</body>
+<script type="text/javascript">
+	if (window.opener.location.hostname == "sdslabs-watchdog.herokuapp.com") {
+		window.opener.updateSlackToken('<%=token%>');
+		window.close()
+	}
+	else {
+		document.getElementsByTagName('body').innerHTML = "Wrong parent window.";
+	}
+</script>
+</html>
