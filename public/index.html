@@ -51,6 +51,20 @@
 <script type="text/javascript">
 	slack_hook = "";
 
+	function downloadString(text, fileType, fileName) {
+	  var blob = new Blob([text], { type: fileType });
+
+	  var a = document.createElement('a');
+	  a.download = fileName;
+	  a.href = URL.createObjectURL(blob);
+	  a.dataset.downloadurl = [fileType, a.download, a.href].join(':');
+	  a.style.display = "none";
+	  document.body.appendChild(a);
+	  a.click();
+	  document.body.removeChild(a);
+	  setTimeout(function() { URL.revokeObjectURL(a.href); }, 1500);
+	}
+
 	function openSlackAuth() {
 		window.open('https://slack.com/oauth/authorize?scope=incoming-webhook,chat:write:bot&client_id=805471384768.805051328564','popuppage',
       'width=800,toolbar=1,resizable=1,scrollbars=yes,height=800,top=100,left=100');
@@ -75,7 +89,12 @@
 
 
 	function generateInstallScript() {
-
+		fetch("/install/web-install.sh")
+			.then(res => res.text())
+			.then(data => {
+				downloadString(data.replace("<%=slack%>", slack_hook), "text/x-shellscript", "install.sh")
+				console.log(data)
+			})
 	}
 </script>
 </html>

@@ -22,8 +22,13 @@ function code2token(code, cb) {
 		url: 'https://slack.com/api/oauth.access',
 		form: form
 	}, function(err, res, body) {
-		// console.log(body)
-		cb(JSON.parse(body).incoming_webhook.url);
+		console.log(body)
+		try {
+			cb(JSON.parse(body).incoming_webhook.url);
+		}
+		catch(e) {
+			cb("")
+		}
 	})
 }
 
@@ -34,7 +39,8 @@ app.get('/slack', (req, res) => {
 		return;
 	}
 	code2token(code, function(token) {
-		res.render('redirect', {token})
+		console.log("here")
+		res.render('webredirect', {token})
 	})
 })
 

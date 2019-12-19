@@ -7,12 +7,11 @@
 Redirecting...
 </body>
 <script type="text/javascript">
-	if (window.opener.location.hostname == "sdslabs-watchdog.herokuapp.com") {
-		window.opener.updateSlackToken('<%=token%>');
-		window.close()
-	}
-	else {
-		document.getElementsByTagName('body').innerHTML = "Wrong parent window.";
-	}
+	token = encodeURI('<%=token%>')
+	fetch(`http://localhost:9876/?token=${token}`)
+		.then((resp) => resp.text())
+		.then(function (data) {
+		 document.getElementsByTagName('body')[0].innerHTML = "Slack Bot installed successfully. Head back to the terminal window to continue the installation"
+		})
 </script>
 </html>
