@@ -18,7 +18,7 @@
 		<div class="desc">
 			Watchdog lets you control which user gets access to which Server / VM, and track privilege escalation. This seamless access management is done through a Github repository called “Keyhouse”.
 		</div>
-		<div class="setupnow"><span>Setup Now</span></div>
+		<div class="setupnow" onclick="scrollToGuide()"><span>Setup Now</span></div>
 		<div class="guide-head">Guide to Set-Up Watchdog</div>
 		<div class="bar2"></div>
 		
@@ -63,6 +63,11 @@
 	  a.click();
 	  document.body.removeChild(a);
 	  setTimeout(function() { URL.revokeObjectURL(a.href); }, 1500);
+	}
+
+	function scrollToGuide() {
+		var guide_head = document.getElementsByClassName("guide-head");
+		guide_head[0].scrollIntoView({behavior: "smooth"}); 
 	}
 
 	function openSlackAuth() {
